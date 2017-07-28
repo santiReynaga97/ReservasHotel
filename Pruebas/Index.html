@@ -9,7 +9,7 @@
 
 <h1>Vendedores</h1>
 <!--agregar y codificar el evento agregar a carrito-->
-<ul id="listaVendedores" >
+<ul id="listaVendedores" onclick="agregarAlCarrito(this.id);">
   <li id="idVendedor1">carlos</li>
   <li id="idVendedor2">Pepe</li>
   <li id="idVendedor3">Juan</li>
@@ -36,11 +36,15 @@
 <input type="button" id="idBtnProductoEliminar" value="Eliminar" onclick="EliminarEventoyAgregarEvento('listaProducto');">
 <br>
 <br>
-<h1>agrege productos al carrito </h1>
+<label >Dejar de Eliminar</label>
+<input type="button" id ="idBtnCancelar" onclick="dejarDeEliminar();" value="Si" />
 
-<label >Sele</label>
+<h1>Agrege productos al carrito </h1>
 
-<input type="button" id ="idBtnCancelar" onclick="dejarDeEliminar();" value="Cancelar" />
+<ul class="listaCarrito">Carrito</ul>
+
+
+
 
 
 
