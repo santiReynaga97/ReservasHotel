@@ -8,7 +8,7 @@
   <body>
 
 <h1>Vendedores</h1>
-<ul id="listaVendedores" onclick="borrar();">
+<ul id="listaVendedores" onclick="borrarLista(this.id);">
   <li id="idVendedor1">carlos</li>
   <li id="idVendedor2">Pepe</li>
   <li id="idVendedor3">Juan</li>
@@ -17,10 +17,10 @@
 
 
 <input type="text" id="txtVendedor" value="Otro mas" />
-<input type="button" id="idBtnVendedor"  onclick="agreagarLi(this.id);" value="Agregar Vendedor" />
+<input type="button" id="idBtnVendedor"  onclick="agregarLista(this.id);" value="Agregar Vendedor" />
 
 <h1>Productos</h1>
-<ul id="listaProducto" onclick="borrar();">
+<ul id="listaProducto" onclick="borrarLista(this.id);">
   <li id="idProducto1">carlos</li>
   <li id="idProducto2">Pepe</li>
   <li id="idProducto3">Juan</li>
@@ -29,7 +29,7 @@
 
 
 <input type="text" id="txtProducto" value="Otro mas" />
-<input type="button" id ="idBtnProducto" onclick="agreagarLi(this.id);" value="Agregar Producto" />
+<input type="button" id ="idBtnProducto" onclick="agregarLista(this.id);" value="Agregar Producto" />
 
 
     <script src="js/archivo.js" charset="utf-8"></script>
