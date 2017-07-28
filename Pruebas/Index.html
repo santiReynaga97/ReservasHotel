@@ -8,7 +8,8 @@
   <body>
 
 <h1>Vendedores</h1>
-<ul id="listaVendedores" onclick="borrarLista(this.id);">
+<!--agregar y codificar el evento agregar a carrito-->
+<ul id="listaVendedores" >
   <li id="idVendedor1">carlos</li>
   <li id="idVendedor2">Pepe</li>
   <li id="idVendedor3">Juan</li>
@@ -18,18 +19,29 @@
 
 <input type="text" id="txtVendedor" value="Otro mas" />
 <input type="button" id="idBtnVendedor"  onclick="agregarLista(this.id);" value="Agregar Vendedor" />
-
+<input type="button" id="idBtnVendedorEliminar" value="Eliminar" onclick="EliminarEventoyAgregarEvento('listaVendedores');">
 <h1>Productos</h1>
-<ul id="listaProducto" onclick="borrarLista(this.id);">
-  <li id="idProducto1">carlos</li>
-  <li id="idProducto2">Pepe</li>
-  <li id="idProducto3">Juan</li>
-  <li id="idProducto4">Rodrigo</li>
+
+
+<ul id="listaProducto" >
+  <li id="idProducto1">Play 4</li>
+  <li id="idProducto2">Xbox</li>
+  <li id="idProducto3">PC Gamer</li>
+  <li id="idProducto4">Nintendo Switch</li>
 </ul>
 
 
 <input type="text" id="txtProducto" value="Otro mas" />
 <input type="button" id ="idBtnProducto" onclick="agregarLista(this.id);" value="Agregar Producto" />
+<input type="button" id="idBtnProductoEliminar" value="Eliminar" onclick="EliminarEventoyAgregarEvento('listaProducto');">
+<br>
+<br>
+<h1>agrege productos al carrito </h1>
+
+<label >Sele</label>
+
+<input type="button" id ="idBtnCancelar" onclick="dejarDeEliminar();" value="Cancelar" />
+
 
 
     <script src="js/archivo.js" charset="utf-8"></script>

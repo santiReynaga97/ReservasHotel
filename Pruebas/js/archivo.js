@@ -1,3 +1,7 @@
+self=this;
+self.activo;
+flag = self.activo;
+
 
 function agregarLista(idTxt){
   if (idTxt =='idBtnVendedor'){
@@ -7,6 +11,37 @@ function agregarLista(idTxt){
     agregar("txtProducto","listaProducto","Producto");
   }
 }
+
+
+function EliminarEventoyAgregarEvento(lista){
+
+          flag =1;
+          var idlista=document.getElementById(lista);
+          idlista.removeAttribute('onclick');
+
+          idlista=document.getElementById(lista);
+          idlista.onclick=function(){
+                borrarLista(this.id);
+          }
+      // no realizar nada
+  }
+
+
+
+
+
+function  agregar(texBox,lista,nombre){
+
+  var texto=document.getElementById(texBox).value;
+  var li=document.createElement('LI');
+  var liElementos= document.getElementById(lista).getElementsByTagName('li');
+  li.innerHTML=texto==''?'(nada)':texto;
+  document.getElementById(lista).appendChild(li).setAttribute("id", "id"+nombre+liElementos.length);
+
+}
+
+
+
 
 function borrarLista(idLista){
   if(idLista == 'listaVendedores'){
@@ -18,23 +53,23 @@ function borrarLista(idLista){
 }
 
 
-function  agregar(texBox,lista,nombre){
-  var texto=document.getElementById(texBox).value;
-  var li=document.createElement('LI');
-  var liElementos= document.getElementById(lista).getElementsByTagName('li');
-  li.innerHTML=texto==''?'(nada)':texto;
-  document.getElementById(lista).appendChild(li).setAttribute("id", "id"+nombre+liElementos.length);
-}
-
-
 function borrar(lista){
     lis=document.getElementById(lista).getElementsByTagName('li');
     console.log(lis);
     for(var i=0; i<lis.length;i++){
         lis[i].onclick=function(){
+          if(flag==1){
             if(confirm('¿Borrar este li?'))
           //  console.log(this);
             this.parentNode.removeChild(this);
+          }
+
+
         }
     }
+}
+
+function dejarDeEliminar(){
+      flag = 0;
+
 }
