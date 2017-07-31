@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Hola que hace </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
 
   <body>
 
 <h1>Vendedores</h1>
 <!--agregar y codificar el evento agregar a carrito-->
-<ul id="listaVendedores" onclick="agregarAlCarrito(this.id);">
+<ul id="listaVendedores" class="list-group" onclick="agregarAlCarrito(this.id);">
   <li id="idVendedor1">carlos</li>
   <li id="idVendedor2">Pepe</li>
   <li id="idVendedor3">Juan</li>
@@ -18,12 +19,16 @@
 
 
 <input type="text" id="txtVendedor" value="Otro mas" />
-<input type="button" id="idBtnVendedor"  onclick="agregarLista(this.id);" value="Agregar Vendedor" />
-<input type="button" id="idBtnVendedorEliminar" value="Eliminar" onclick="EliminarEventoyAgregarEvento('listaVendedores');">
+<input type="button" id="idBtnVendedor" class="btn btn-primary" onclick="agregarLista(this.id);" value="Agregar Vendedor" />
+<input type="button" id="idBtnVendedorEliminar" class="btn btn-success" value="Eliminar" onclick="EliminarEventoyAgregarEvento('listaVendedores');">
+<br>
+<br>
+<label >Dejar de Eliminar</label>
+<input type="button" id ="idBtnCancelar" class="btn btn-danger" onclick="dejarDeEliminar('listaVendedores');" value="Si" />
 <h1>Productos</h1>
 
 
-<ul id="listaProducto" >
+<ul id="listaProducto" class="list-group" >
   <li id="idProducto1">Play 4</li>
   <li id="idProducto2">Xbox</li>
   <li id="idProducto3">PC Gamer</li>
@@ -32,23 +37,24 @@
 
 
 <input type="text" id="txtProducto" value="Otro mas" />
-<input type="button" id ="idBtnProducto" onclick="agregarLista(this.id);" value="Agregar Producto" />
-<input type="button" id="idBtnProductoEliminar" value="Eliminar" onclick="EliminarEventoyAgregarEvento('listaProducto');">
+<input type="button" id ="idBtnProducto" class="btn btn-primary" onclick="agregarLista(this.id);" value="Agregar Producto" />
+<input type="button" id="idBtnProductoEliminar" class="btn btn-success" value="Eliminar" onclick="EliminarEventoyAgregarEvento('listaProducto');">
 <br>
 <br>
 <label >Dejar de Eliminar</label>
-<input type="button" id ="idBtnCancelar" onclick="dejarDeEliminar();" value="Si" />
+<input type="button" id ="idBtnCancelar" class="btn btn-danger" onclick="dejarDeEliminar('listaProducto');" value="Si" />
 
 <h1>Agrege productos al carrito </h1>
 
-<ul class="listaCarrito">Carrito</ul>
-
-
-
-
+<ul id="listaCarrito" class="list-group" >Carrito</ul>
 
 
     <script src="js/archivo.js" charset="utf-8"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
   </body>
 
 </html>

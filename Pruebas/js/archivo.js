@@ -1,7 +1,4 @@
-self=this;
-self.activo;
-flag = self.activo;
-
+var flag;
 
 function agregarLista(idTxt){
   if (idTxt =='idBtnVendedor'){
@@ -27,14 +24,21 @@ function EliminarEventoyAgregarEvento(lista){
   }
 
 
-  function dejarDeEliminar(){
+  function dejarDeEliminar(lista){
         flag = 0;
+        var idlista=document.getElementById(lista);
+        idlista.removeAttribute('onclick');
+
+        document.getElementById(lista).onclick=function(){
+          agregarAlCarrito(lista);
+        }
   }
 
 
 
 
 function  agregar(texBox,lista,nombre){
+//if textbox.value==false
 
   var texto=document.getElementById(texBox).value;
   var li=document.createElement('LI');
@@ -59,7 +63,6 @@ function borrarLista(idLista){
 
 function borrar(lista){
     lis=document.getElementById(lista).getElementsByTagName('li');
-    console.log(lis);
     for(var i=0; i<lis.length;i++){
         lis[i].onclick=function(){
           if(flag==1){
@@ -67,8 +70,6 @@ function borrar(lista){
           //  console.log(this);
             this.parentNode.removeChild(this);
           }
-
-
         }
     }
 }
@@ -82,9 +83,9 @@ function agregarAlCarrito(lista){
       lis[i].onclick=function(){
         if(confirm('¿Quiere Agregar el Producto al Carrito?')){
             var listaCarrito =document.createElement('li');
-        //  console.log(this);
-            listaCarrito.innerHTML= lis[i].textContent;
-            document.getElementById('listaCarrito').appendChild(listaCarrito);
+            listaCarrito.innerHTML =this.innerHTML;
+            //listaCarrito.innerHTML= lis[i].innerHTML;
+            document.getElementById('listaCarrito').appendChild(listaCarrito);;
           }
         }
   }
